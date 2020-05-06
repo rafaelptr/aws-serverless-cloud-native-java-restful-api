@@ -47,7 +47,7 @@
 				],
 				"body": {
 					"mode": "raw",
-					"raw": "{\n    \"tripDate\": '2019-12-03',\n    \"country\": 'China',\n    \"city\": 'Wuhan'\n}"
+					"raw": "{\n    \"date\": '2019-12-03',\n    \"country\": 'China',\n    \"city\": 'Wuhan'\n}"
 				},
 				"url": {
 					"raw": "http://localhost:3000/trips",
