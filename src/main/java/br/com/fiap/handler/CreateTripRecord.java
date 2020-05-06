@@ -23,7 +23,7 @@ public class CreateTripRecord implements RequestHandler<HandlerRequest, HandlerR
 			return HandlerResponse.builder().setStatusCode(400).setRawBody("There is a error in your Trip!").build();
 		}
 
-		PhotoBucket photoBucket = new PhotoBucket(trip.getCountry(), trip.getCity(), trip.getTripDate());
+		PhotoBucket photoBucket = new PhotoBucket(trip.getCountry(), trip.getCity(), trip.getDate());
 		trip.setUrl(photoBucket.getName());
 
 		context.getLogger().log("Creating a new trip id, url: " + trip.getId()+", "+trip.getUrl());
