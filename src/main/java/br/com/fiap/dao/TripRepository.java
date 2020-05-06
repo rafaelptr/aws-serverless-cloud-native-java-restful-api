@@ -8,6 +8,7 @@ import java.util.Optional;
 import br.com.fiap.model.Trip;
 import com.amazonaws.services.dynamodbv2.datamodeling.DynamoDBMapper;
 import com.amazonaws.services.dynamodbv2.datamodeling.DynamoDBQueryExpression;
+import com.amazonaws.services.dynamodbv2.datamodeling.DynamoDBScanExpression;
 import com.amazonaws.services.dynamodbv2.model.AttributeValue;
 
 public class TripRepository {
@@ -26,7 +27,7 @@ public class TripRepository {
 		eav.put(":val2", new AttributeValue().withS(ends));
 
 		final DynamoDBQueryExpression<Trip> queryExpression = new DynamoDBQueryExpression<Trip>()
-				.withKeyConditionExpression("tripDate between :val2 and :val3")
+				.withKeyConditionExpression("date between :val1 and :val2")
 				.withExpressionAttributeValues(eav);
 
 		final List<Trip> trips = mapper.query(Trip.class, queryExpression);
