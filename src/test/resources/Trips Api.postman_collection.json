@@ -1,0 +1,87 @@
+{
+	"info": {
+		"name": "Trips Api",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "findByPeriod",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3000/trips?start=2019-05-01&end=2020-05-31",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"trips"
+					],
+					"query": [
+						{
+							"key": "start",
+							"value": "2019-05-01"
+						},
+						{
+							"key": "end",
+							"value": "2020-05-31"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "createTripRecord",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"tripDate\": '2019-12-03',\n    \"country\": 'China',\n    \"city\": 'Wuhan'\n}"
+				},
+				"url": {
+					"raw": "http://localhost:3000/trips",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"trips"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "findById",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3000/trips/1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"trips",
+						"1"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
