@@ -30,6 +30,8 @@ public class CreateTripRecord implements RequestHandler<HandlerRequest, HandlerR
 
 		final Trip tripRecorded = repository.save(trip);
 
+		context.getLogger().log("Saved trip: " + trip.toString());
+
 		CreateTripDTO tripDTO = new CreateTripDTO(trip.getId(),trip.getUrl());
 
 		return HandlerResponse.builder().setStatusCode(201).setObjectBody(tripDTO).build();

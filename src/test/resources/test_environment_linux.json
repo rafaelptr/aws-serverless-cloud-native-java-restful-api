@@ -1,14 +1,14 @@
 {
 	"CreateTripRecordFunction": {
-		"ENDPOINT_OVERRIDE": "http://127.0.0.1:8000",
+		"ENDPOINT_OVERRIDE": "http://host.docker.internal:8000",
 		"TABLE_NAME": "trip"
 	},
 	"GetTripRecordsByPeriodFunction": {
-		"ENDPOINT_OVERRIDE": "http://127.0.0.1:8000",
+		"ENDPOINT_OVERRIDE": "http://host.docker.internal:8000",
 		"TABLE_NAME": "trip"
 	},
 	"GetTripRecordByIdFunction": {
-		"ENDPOINT_OVERRIDE": "http://127.0.0.1:8000",
+		"ENDPOINT_OVERRIDE": "http://host.docker.internal:8000",
 		"TABLE_NAME": "trip"
 	}
 }

@@ -1,10 +1,7 @@
 package br.com.fiap.model;
 
 import com.amazonaws.services.dynamodbv2.datamodeling.*;
-import lombok.AllArgsConstructor;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.Setter;
+import lombok.*;
 
 
 @DynamoDBTable(tableName = "trip")
@@ -12,6 +9,7 @@ import lombok.Setter;
 @Setter
 @NoArgsConstructor
 @AllArgsConstructor
+@ToString
 /** Trip : id, date (YYYY/MM/DD),
 country, city, URL repository for photos **/
 public class Trip {
