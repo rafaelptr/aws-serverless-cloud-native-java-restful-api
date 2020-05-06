@@ -23,11 +23,15 @@ public class TripRepository {
 	public List<Trip> findByPeriod(final String starts, final String ends) {
 
 		final Map<String, AttributeValue> eav = new HashMap<String, AttributeValue>();
-		eav.put(":val1", new AttributeValue().withS(starts));
-		eav.put(":val2", new AttributeValue().withS(ends));
+		eav.put(":starts", new AttributeValue().withS(starts));
+		eav.put(":ends", new AttributeValue().withS(ends));
+
+		final Map<String,String> expName = new HashMap<>();
+		expName.put("#date","date");
 
 		final DynamoDBQueryExpression<Trip> queryExpression = new DynamoDBQueryExpression<Trip>()
-				.withKeyConditionExpression("date between :val1 and :val2")
+				.withKeyConditionExpression("#date BETWEEN :starts AND :ends")
+				.withExpressionAttributeNames(expName)
 				.withExpressionAttributeValues(eav);
 
 		final List<Trip> trips = mapper.query(Trip.class, queryExpression);
